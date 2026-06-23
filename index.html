@@ -1,15 +1,87 @@
-<!-- index.html-->
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HexaNotes</title>
-
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HexaClock</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>HexaClock</h1>
+
+<div id="loadingScreen">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <h1>Welcome to HexaClock</h1>
+</div>
+
+<div class="container">
+
+  <div class="sidebar">
+    <div class="sidebar-header">
+        <h2>HexaClock</h2>
+    </div>
+    <div class="nav-container">
+        <button id="btn-clock" class="nav-btn active" onclick="showTab('clock')">World Clock</button>
+        <button id="btn-stopwatch" class="nav-btn" onclick="showTab('stopwatch')">Stopwatch</button>
+        <button id="btn-timer" class="nav-btn" onclick="showTab('timer')">Timer</button>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div id="clock" class="tab active">
+      <div class="search-container">
+        <input type="text" id="citySearch" placeholder="Search city (e.g., London, Tokyo, New York)..." oninput="filterCities()">
+        <div id="searchResults" class="search-results"></div>
+      </div>
+      <div class="display-card">
+        <h2 id="clockTarget">Local Time</h2>
+        <h1 id="time">--:--:--</h1>
+        <p id="date">-- -- ----</p>
+      </div>
+    </div>
+
+    <div id="stopwatch" class="tab">
+      <div class="display-card">
+        <h1 id="sw">00:00.00</h1>
+        <div class="controls">
+            <button class="action-btn accent-btn" onclick="startStopwatch()">Start</button>
+            <button class="action-btn" onclick="pauseStopwatch()">Pause</button>
+            <button class="action-btn danger-btn" onclick="resetStopwatch()">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="timer" class="tab">
+      <div class="display-card">
+        <h1 id="tDisplay" class="timer-countdown">00:00</h1>
+        
+        <div class="timer-setup-container">
+          <div class="time-input-group">
+            <div class="input-col">
+              <input id="mins" type="number" min="0" max="99" value="0" placeholder="00"/>
+              <span>min</span>
+            </div>
+            <div class="time-colon">:</div>
+            <div class="input-col">
+              <input id="secs" type="number" min="0" max="59" value="0" placeholder="00"/>
+              <span>sec</span>
+            </div>
+          </div>
+          
+          <div class="controls">
+            <button class="action-btn accent-btn" onclick="startTimer()">Start</button>
+            <button class="action-btn danger-btn" onclick="clearTimer()">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
