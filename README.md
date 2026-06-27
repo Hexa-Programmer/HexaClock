@@ -53,4 +53,4 @@ open index.html
 
 This is a personal learning project and will continue to evolve over time.
 
-Made with ❤️ by Hexa
+Made with ❤️ by Hexa-Programmer
