@@ -1,9 +1,9 @@
 # HexaClock
 
 View HexaClock at: https://hexa-programmer.github.io/HexaClock/
-![HexaClock Gameplay](showcase.png)
 HexaClock is a minimal, premium web application built using HTML, CSS, and JavaScript.
 It runs entirely in the browser, featuring a World Clock, Stopwatch, and Timer, operating completely offline without any external APIs.
+![HexaClock Gameplay](showcase.png)
 
 ---
 
